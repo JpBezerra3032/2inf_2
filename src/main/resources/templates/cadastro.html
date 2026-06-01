@@ -9,12 +9,20 @@
 <h1>Cadastro de Aluno</h1>
 
 <form th:action="@{/salvar}" th:object="${aluno}" method="post">
-    <label>Número:</label>
+    <label>Numero:</label>
     <input type="text" th:field="*{numero}">
+
     <label>Nome:</label>
     <input type="text" th:field="*{nome}">
+
     <label>Sexo:</label>
     <input type="text" th:field="*{sexo}" >
+
+    <label>Turma:</label>
+    <input type="text" th:field="*{turma}" >
+
+    <label>Matricula:</label>
+    <input type="text" th:field="*{matricula}" >
     <input type="submit" value="salvar">
 </form>
 
@@ -23,15 +31,19 @@
 <table border="1">
 
     <tr>
-        <th>Número</th>
+        <th>Numero</th>
         <th>Nome</th>
         <th>Sexo</th>
+        <th>Turma</th>
+        <th>Matricula</th>
     </tr>
 
     <tr th:each="aluno : ${listaAlunos}">
         <td th:text="${aluno.numero}"></td>
         <td th:text="${aluno.nome}"></td>
         <td th:text="${aluno.sexo}"></td>
+        <td th:text="${aluno.turma}"></td>
+        <td th:text="${aluno.matricula}"></td>
     </tr>
 
 </table>
